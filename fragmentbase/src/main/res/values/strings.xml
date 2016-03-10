@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FragmentBase</string>
+    <string name="action_settings">Settings</string>
+    <string name="networkIssue_not_have_net">網路連線出現錯誤</string>
+</resources>
