@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 
-import com.android.fragmentbase.control.BaseFragmentControl;
 import com.android.fragmentbase.fragment.base.PageFragment;
 
 public abstract class MenuFragment extends PageFragment {
@@ -37,7 +36,6 @@ public abstract class MenuFragment extends PageFragment {
         } else {
             menuView.setVisibility(View.GONE);
         }
-        BaseFragmentControl.getInstance().setMenuWidget(this);
         return menuView;
     }
 

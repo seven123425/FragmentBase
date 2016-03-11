@@ -5,21 +5,6 @@ import com.android.fragmentbase.process.PageProcess;
 
 public abstract class BaseProcessControl {
 
-    private static BaseProcessControl instance = new BaseProcessControl() {
-        @Override
-        protected PageProcess homeProcess() {
-            return null;
-        }
-    };
-
-    protected BaseProcessControl() {
-
-    }
-
-    public static BaseProcessControl getInstance() {
-        return instance;
-    }
-
     private PageProcess process = homeProcess();
 
     protected abstract PageProcess homeProcess();

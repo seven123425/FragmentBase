@@ -15,8 +15,8 @@ import static com.android.fragmentbase.util.LayoutFormat.getBitItemWidth;
 public abstract class PageFragment extends BaseFragment {
 
     private View fragmentView;
-    private int fragmantAnmiIn = R.anim.alpha_enter;
-    private int fragmantAnmiOut = R.anim.alpha_exit;
+    private int fragmentAnimIn = R.anim.alpha_enter;
+    private int fragmentAnimOut = R.anim.alpha_exit;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,19 +59,19 @@ public abstract class PageFragment extends BaseFragment {
     }
 
     private int fragmentInAnim(){
-        return fragmantAnmiIn;
+        return fragmentAnimIn;
     }
 
     private int fragmentOutAnim(){
-        return fragmantAnmiOut;
+        return fragmentAnimOut;
     }
 
     protected void setFragmentInAnim(int id){
-        fragmantAnmiIn = id;
+        fragmentAnimIn = id;
     }
 
     protected void setFragmentOutAnim(int id){
-        fragmantAnmiOut = id;
+        fragmentAnimOut = id;
     }
 
     protected abstract String LayoutType();

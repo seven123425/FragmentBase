@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.fragmentbase.control.BaseFragmentControl;
 import com.android.fragmentbase.factory.BaseFragmentFactory;
 import com.android.fragmentbase.fragment.base.BaseFragment;
 import com.android.fragmentbase.fragment.base.PageFragment;
@@ -19,7 +18,6 @@ public abstract class BodyFragment extends PageFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        BaseFragmentControl.getInstance().setBodyWidget(this);
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 

@@ -18,8 +18,10 @@ public abstract class BaseFragmentActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_fragment);
+        getFragmentDefaultControl().setBodyWidget(bodyFragment);
         getFragmentDefaultControl().initFragmentInLayout(R.id.body, this, bodyFragment);
         if(bodyFragment.getTitleFragment() != null){
+            getFragmentDefaultControl().setTitleWidget(bodyFragment.getTitleFragment());
             getFragmentDefaultControl().initFragmentInLayout(R.id.title, this, bodyFragment.getTitleFragment());
         }else {
             getFragmentDefaultControl().initTitleLayout(R.id.title);
