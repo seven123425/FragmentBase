@@ -31,10 +31,7 @@ public class LayoutFormat {
     public static int vWidth;
     public static int vHeight;
     public static double screenInches;
-    public static int exampleWidth = 1242;
-    public static int exampleHeight = 2208;
     public static int defaultScreenSize = 7;
-    private static float ratio = (float) (Math.round((exampleHeight * 100) / exampleWidth)) / 100;
 
     private static int getActionBarHeight(Context context) {
         int actionBarHeight = 0;
@@ -45,15 +42,16 @@ public class LayoutFormat {
         return actionBarHeight;
     }
 
-    public static void findDeviceSizeUseWidth(Context context, boolean actionBar) {
-        findDeviceSize(context, deviceSizeUseType.Width.toString(), actionBar);
+    public static void findDeviceSizeUseWidth(Context context, LayoutExampleSize exampleSize, boolean actionBar) {
+        findDeviceSize(context, exampleSize, deviceSizeUseType.Width.toString(), actionBar);
     }
 
-    public static void findDeviceSizeUseHeight(Context context, boolean actionBar) {
-        findDeviceSize(context, deviceSizeUseType.Height.toString(), actionBar);
+    public static void findDeviceSizeUseHeight(Context context, LayoutExampleSize exampleSize, boolean actionBar) {
+        findDeviceSize(context, exampleSize, deviceSizeUseType.Height.toString(), actionBar);
     }
 
-    private static void findDeviceSize(Context context, String deviceType, boolean actionBar) {
+    private static void findDeviceSize(Context context,LayoutExampleSize exampleSize,  String deviceType, boolean actionBar) {
+        float ratio = (float) (Math.round((exampleSize.layoutExampleHeight() * 100) / exampleSize.layoutExampleWidth())) / 100;
         DisplayMetrics dm = new DisplayMetrics();
         ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(dm);
         dWidth = dm.widthPixels;
@@ -71,13 +69,13 @@ public class LayoutFormat {
             vWidth = (int) (useHeight / ratio);
             vHeight = useHeight;
             if (dWidth < vWidth) {
-                findDeviceSizeUseWidth(context, actionBar);
+                findDeviceSizeUseWidth(context, exampleSize, actionBar);
             }
         } else if (deviceType.equals(deviceSizeUseType.Width.toString())) {
             vWidth = dWidth;
             vHeight = (int) (dWidth * ratio);
             if (useHeight < vHeight) {
-                findDeviceSizeUseHeight(context, actionBar);
+                findDeviceSizeUseHeight(context, exampleSize, actionBar);
             }
         }
     }
