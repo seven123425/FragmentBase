@@ -5,7 +5,7 @@ import com.android.fragmentbase.process.PageProcess;
 
 public abstract class BaseProcessControl {
 
-    private PageProcess process = homeProcess();
+    protected PageProcess process = homeProcess();
 
     protected abstract PageProcess homeProcess();
 
