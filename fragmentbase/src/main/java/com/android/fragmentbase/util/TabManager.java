@@ -1,10 +1,10 @@
 package com.android.fragmentbase.util;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -17,7 +17,7 @@ public abstract class TabManager implements TabHost.OnTabChangeListener {
 
     enum tabKey{name};
 
-    private final FragmentActivity mActivity;
+    private final Activity mActivity;
     private final TabHost mTabHost;
     private final int mContainerId;
     private View lasttabview;
@@ -55,7 +55,7 @@ public abstract class TabManager implements TabHost.OnTabChangeListener {
         }
     }
 
-    public TabManager(FragmentActivity activity, TabHost tabHost, int containerId, ArrayList<HashMap<String, String>> data) {
+    public TabManager(Activity activity, TabHost tabHost, int containerId, ArrayList<HashMap<String, String>> data) {
         mActivity = activity;
         mTabHost = tabHost;
         mContainerId = containerId;
@@ -73,9 +73,9 @@ public abstract class TabManager implements TabHost.OnTabChangeListener {
 
         TabInfo info = new TabInfo(tag, clss, args);
 
-        info.fragment = mActivity.getSupportFragmentManager().findFragmentByTag(tag);
+        info.fragment = mActivity.getFragmentManager().findFragmentByTag(tag);
         if (info.fragment != null && !info.fragment.isDetached()) {
-            FragmentTransaction ft = mActivity.getSupportFragmentManager().beginTransaction();
+            FragmentTransaction ft = mActivity.getFragmentManager().beginTransaction();
             ft.detach(info.fragment);
             ft.commit();
         }
@@ -99,7 +99,7 @@ public abstract class TabManager implements TabHost.OnTabChangeListener {
             mTabHost.getCurrentTabView().setAnimation(fadeIn);
         }
         if (mLastTab != newTab) {
-            FragmentTransaction ft = mActivity.getSupportFragmentManager().beginTransaction();
+            FragmentTransaction ft = mActivity.getFragmentManager().beginTransaction();
             if (mLastTab != null) {
                 if (mLastTab.fragment != null) {
                     ft.detach(mLastTab.fragment);
