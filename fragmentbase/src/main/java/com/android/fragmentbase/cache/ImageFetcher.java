@@ -26,6 +26,8 @@ import android.support.v7.appcompat.BuildConfig;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.fragmentbase.R;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -36,8 +38,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.SocketException;
 import java.net.URL;
-
-import fragmentbase.acer.com.fragmentbase.R;
 
 /**
  * A simple subclass of {@link ImageResizer} that fetches and resizes images fetched from a URL.

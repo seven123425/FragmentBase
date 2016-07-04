@@ -24,9 +24,9 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.util.Log;
 
-import java.io.FileDescriptor;
+import com.android.fragmentbase.BuildConfig;
 
-import fragmentbase.acer.com.fragmentbase.BuildConfig;
+import java.io.FileDescriptor;
 
 import static com.android.fragmentbase.cache.ImageUtils.hasHoneycomb;
 

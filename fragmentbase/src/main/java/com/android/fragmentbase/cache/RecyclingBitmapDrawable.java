@@ -21,7 +21,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 
-import fragmentbase.acer.com.fragmentbase.BuildConfig;
+import com.android.fragmentbase.BuildConfig;
 
 /**
  * A BitmapDrawable that keeps track of whether it is being displayed or cached.

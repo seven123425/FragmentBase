@@ -8,8 +8,6 @@ import com.android.fragmentbase.control.BaseFragmentControl;
 import com.android.fragmentbase.control.BaseProcessControl;
 import com.android.fragmentbase.fragment.page.BodyFragment;
 
-import fragmentbase.acer.com.fragmentbase.R;
-
 public abstract class BaseFragmentActivity extends Activity {
 
     private BodyFragment bodyFragment = bodyFragment();

@@ -32,6 +32,8 @@ import android.os.StatFs;
 import android.util.Log;
 import android.util.LruCache;
 
+import com.android.fragmentbase.BuildConfig;
+
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -45,8 +47,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-
-import fragmentbase.acer.com.fragmentbase.BuildConfig;
 
 /**
  * This class handles disk and memory caching of bitmaps in conjunction with the

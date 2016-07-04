@@ -30,9 +30,9 @@ import android.graphics.drawable.TransitionDrawable;
 import android.util.Log;
 import android.widget.ImageView;
 
-import java.lang.ref.WeakReference;
+import com.android.fragmentbase.BuildConfig;
 
-import fragmentbase.acer.com.fragmentbase.BuildConfig;
+import java.lang.ref.WeakReference;
 
 import static com.android.fragmentbase.cache.ImageUtils.hasHoneycomb;
 

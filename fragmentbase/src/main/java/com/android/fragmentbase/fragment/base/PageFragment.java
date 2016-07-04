@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
-import fragmentbase.acer.com.fragmentbase.R;
+import com.android.fragmentbase.R;
 
 import static com.android.fragmentbase.util.LayoutFormat.getBitItemHeight;
 import static com.android.fragmentbase.util.LayoutFormat.getBitItemWidth;
