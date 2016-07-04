@@ -1,19 +1,6 @@
-/*
-!/.gitignore
-!gradle
-!gradlew
-!gradlew.bat
-#!gradle.properties
-!settings.gradle
-!build.gradle
-!src
-!res
-!assets
-!libs
-!AndroidManifest.xml
-# 要先打開app 再關掉app底下的檔案 再逐個加入app底下要track的檔案
-!fragmentbase
-fragmentbase/*
-!fragmentbase/src
-!fragmentbase/libs
-!fragmentbase/build.gradle
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/fragmentbase/build
