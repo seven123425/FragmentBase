@@ -14,6 +14,10 @@ public abstract class CustomizeAdapter extends BaseAdapter {
     protected LayoutInflater inflater;
     protected ImageFetcher fetcher;
 
+    public CustomizeAdapter(Context context) {
+        this(context, null);
+    }
+
     public CustomizeAdapter(Context context, ImageFetcher fetcher) {
         this.context = context;
         this.activity = (Activity) context;

@@ -6,8 +6,12 @@ import com.android.fragmentbase.fragment.page.BodyFragment;
 
 public abstract class ShapeProcess extends BaseProcess {
 
+    protected PageProcess control;
+
     public ShapeProcess(PageProcess control, BaseFragmentFactory fragmentFactory, BaseFragmentControl fragmentControl) {
-        super(control, fragmentFactory, fragmentControl);
+        super(fragmentFactory, fragmentControl);
+        this.control = control;
+        control.callByOtherLine();
     }
 
     public PageProcess getLastControl() {

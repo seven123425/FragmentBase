@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,12 +27,13 @@ public class LayoutFormat {
 
     private enum deviceSizeUseType {Width, Height}
 
-    public static int dWidth;
-    public static int dHeight;
+    protected static int dWidth;
+    protected static int dHeight;
     public static int vWidth;
     public static int vHeight;
-    public static double screenInches;
-    public static int defaultScreenSize = 7;
+    protected static double screenInches;
+    protected static int defaultScreenSize = 7;
+    protected static LayoutExampleSize layoutExampleSize;
 
     private static int getActionBarHeight(Context context) {
         int actionBarHeight = 0;
@@ -51,6 +53,7 @@ public class LayoutFormat {
     }
 
     private static void findDeviceSize(Context context,LayoutExampleSize exampleSize,  String deviceType, boolean actionBar) {
+        layoutExampleSize = exampleSize;
         float ratio = (float) (Math.round((exampleSize.layoutExampleHeight() * 100) / exampleSize.layoutExampleWidth())) / 100;
         DisplayMetrics dm = new DisplayMetrics();
         ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -286,6 +289,18 @@ public class LayoutFormat {
         } else if (inputType.equals(parentLayoutType.FrameLayout.toString())) {
             for (ViewPager viewPager : viewPagers) {
                 viewPager.setLayoutParams(layParamsOfFrame(widthSize, heightSize, viewPager));
+            }
+        }
+    }
+
+    public static void horizontalScrollViewFormat(float widthSize, float heightSize, String inputType, HorizontalScrollView... horizontalScrollViews) {
+        if (inputType.equals(parentLayoutType.LinearLayout.toString())) {
+            for (HorizontalScrollView horizontalScrollView : horizontalScrollViews) {
+                horizontalScrollView.setLayoutParams(layParamsOfLinear(widthSize, heightSize, horizontalScrollView));
+            }
+        } else if (inputType.equals(parentLayoutType.RelativeLayout.toString())) {
+            for (HorizontalScrollView horizontalScrollView : horizontalScrollViews) {
+                horizontalScrollView.setLayoutParams(layParamsOfRelative(widthSize, heightSize, horizontalScrollView));
             }
         }
     }

@@ -5,4 +5,6 @@ public interface PageProcess {
     void nextPage();
 
     void lastPage();
+
+    void callByOtherLine();
 }

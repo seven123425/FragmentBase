@@ -29,7 +29,7 @@ public abstract class BaseFragmentActivity extends Activity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if(beckEvent()){
+            if(!beckEvent()){
                 getFragmentDefaultControl().changeLastPage(getProcessDefaultControl());
             }
             return false;

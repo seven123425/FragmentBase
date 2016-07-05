@@ -8,22 +8,18 @@ public abstract class BaseProcess implements PageProcess {
 
     protected int pageCount = 0;
 
-    protected PageProcess control;
-
     protected abstract String[] getPageString();
 
     protected BaseFragmentFactory fragmentFactory;
 
     protected BaseFragmentControl fragmentControl;
 
-    public BaseProcess(PageProcess control, BaseFragmentFactory fragmentFactory, BaseFragmentControl fragmentControl) {
+    public BaseProcess(BaseFragmentFactory fragmentFactory, BaseFragmentControl fragmentControl) {
         if (!isFirstProcess()) {
             pageCount = -1;
         }
-        this.control = control;
         this.fragmentFactory = fragmentFactory;
         this.fragmentControl = fragmentControl;
-        pageCount++;
     }
 
     @Override
@@ -50,5 +46,10 @@ public abstract class BaseProcess implements PageProcess {
 
     protected boolean isFirstProcess() {
         return true;
+    }
+
+    @Override
+    public void callByOtherLine() {
+        pageCount++;
     }
 }
